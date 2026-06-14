@@ -1,0 +1,26 @@
+{
+  "name": "veritrail",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Veritrail — a self-healing web agent that proves every action it takes with a tamper-evident, signed receipt.",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "verify": "tsx scripts/verify-receipt.ts",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "playwright install chromium"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "openai": "^4.67.3",
+    "playwright": "1.49.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10",
+    "tsx": "^4.19.1",
+    "typescript": "^5.5.4"
+  }
+}

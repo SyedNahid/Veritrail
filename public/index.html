@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veritrail — verifiable web agent</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark">▦</span>
+      <div>
+        <h1>Veritrail</h1>
+        <p>An autonomous web agent that recovers from failure — and proves every action it took.</p>
+      </div>
+    </div>
+    <div class="mode" id="mode">mode: …</div>
+  </header>
+
+  <section class="controls">
+    <input id="goal" type="text" placeholder="Goal (leave blank to run the bundled reimbursement demo)" />
+    <div class="btns">
+      <button id="run" class="primary">Run task</button>
+      <button id="runBroken">Run on changed site</button>
+      <button id="baseline" class="ghost">Run naive script</button>
+    </div>
+  </section>
+
+  <div id="baselineNote" class="banner" hidden></div>
+
+  <main class="grid">
+    <section class="panel feed">
+      <div class="panel-head"><h2>Live agent feed</h2><span id="status" class="pill">idle</span></div>
+      <div id="feed" class="feed-body">
+        <p class="empty">Run a task to watch the agent plan, act, verify, and self-heal step by step.</p>
+      </div>
+      <figure class="shot">
+        <div class="shot-empty" id="shotEmpty">The live browser view appears here once a task starts.</div>
+        <img id="shot" alt="" hidden />
+        <figcaption id="shotUrl"></figcaption>
+      </figure>
+    </section>
+
+    <section class="panel chain">
+      <div class="panel-head">
+        <h2>Action receipt</h2>
+        <div class="chain-actions">
+          <button id="verify" class="ghost" disabled>Verify</button>
+          <button id="tamper" class="danger" disabled>Tamper &amp; re-verify</button>
+        </div>
+      </div>
+      <div id="verdict" class="verdict" hidden></div>
+      <div id="links" class="links">
+        <p class="empty">Each step is hashed into the one before it and the chain is signed. Edit any step and the chain breaks.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Microsoft Build AI · Agentic Web · planner &amp; verifier on Azure OpenAI · guardrail on Azure AI Content Safety
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
